@@ -17,6 +17,131 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- header start -->
+    <header class="container my-4">
+      <h1 class="text-center color-one fw-bolder">
+        Expense and Savings
+        <span class="color-two display-5 fw-bold">Calcultaion</span>
+      </h1>
+    </header>
+    <!-- header end -->
+    <main class="container my-5">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-5">
+            <img class="img-fluid" src="./img/banner.jpg" alt="banner-img" />
+          </div>
+        </div>
+        <!-- money calculation section start -->
+        <div class="col-lg-6">
+          <div class="calculation-form py-4 px-5">
+            <form>
+              <!-- income input start -->
+              <div>
+                <h4 class="text-center mb-3">Income</h4>
+                <div class="mb-3 row">
+                  <label for="input-income" class="col-sm-2 col-form-label"
+                    >Income:</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="input-income"
+                      placeholder="Enter your Income"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- income input end -->
+              <!-- expense input start -->
+              <div>
+                <h4 class="text-center mb-3">Expenses</h4>
+                <div class="mb-3 row">
+                  <label for="input-food" class="col-sm-2 col-form-label"
+                    >Food:</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="input-food"
+                      placeholder="Enter your food cost"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="input-rent" class="col-sm-2 col-form-label"
+                    >Rent:</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="input-rent"
+                      placeholder="Enter your rent cost"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label for="input-clothes" class="col-sm-2 col-form-label"
+                    >Clothes:</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="input-clothes"
+                      placeholder="Enter your clothes cost"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- expense input end -->
+              <button type="submit" class="btn btn-bg d-block mx-auto">
+                Calcutate
+              </button>
+            </form>
+            <!-- balance calculation start -->
+            <div class="text-center my-3">
+              <h5>Total Expenses : <span id="total-expenses"> 00 </span></h5>
+              <h5>Balance : <span id="balance"> 00</span></h5>
+            </div>
+            <!-- balance calculation end -->
+            <!-- savings calculation start -->
+            <div class="my-4">
+              <div class="input-group mb-3">
+                <label for="input-save" class="col-sm-2 col-form-label"
+                  >save:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter saving persantage"
+                />
+                <span class="input-group-text">%</span>
+                <button
+                  id="saving-btn"
+                  type="button"
+                  class="btn btn-bg d-block mx-auto"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+            <!-- savings calculation end -->
+            <!-- reamining balance start -->
+            <div class="text-center">
+              <h5>Saving Amount : <span id="saving-amount">00</span></h5>
+              <h5>Reamining Balance : <span id="remaing-balance">00</span></h5>
+            </div>
+            <!-- reamining balance end -->
+          </div>
+        </div>
+        <!-- money calculation section end -->
+      </div>
+    </main>
+
     <!-- script file included -->
     <script src="./js/main.js"></script>
   </body>
