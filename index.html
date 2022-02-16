@@ -29,16 +29,20 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="mb-5">
-            <img class="img-fluid" src="./img/banner.jpg" alt="banner-img" />
+            <img
+              class="img-fluid rounded"
+              src="./img/banner.jpg"
+              alt="banner-img"
+            />
           </div>
         </div>
         <!-- money calculation section start -->
         <div class="col-lg-6">
-          <div class="calculation-form py-4 px-5">
+          <div class="calculation-form py-4 px-5 rounded">
             <form>
-              <!-- income input start -->
+              <!-- income form input start -->
               <div>
-                <h4 class="text-center mb-3">Income</h4>
+                <h4 class="text-center mb-3 color-two">Income</h4>
                 <div class="mb-3 row">
                   <label for="input-income" class="col-sm-2 col-form-label"
                     >Income:</label
@@ -53,10 +57,10 @@
                   </div>
                 </div>
               </div>
-              <!-- income input end -->
-              <!-- expense input start -->
+              <!-- income from input end -->
+              <!-- expenses form input start -->
               <div>
-                <h4 class="text-center mb-3">Expenses</h4>
+                <h4 class="text-center mb-3 color-two">Expenses</h4>
                 <div class="mb-3 row">
                   <label for="input-food" class="col-sm-2 col-form-label"
                     >Food:</label
@@ -97,7 +101,7 @@
                   </div>
                 </div>
               </div>
-              <!-- expense input end -->
+              <!-- expenses form input end -->
               <button type="submit" class="btn btn-bg d-block mx-auto">
                 Calcutate
               </button>
@@ -105,7 +109,7 @@
             <!-- balance calculation start -->
             <div class="text-center my-3">
               <h5>Total Expenses : <span id="total-expenses"> 00 </span></h5>
-              <h5>Balance : <span id="balance"> 00</span></h5>
+              <h5>Balance : <span id="total-balance"> 00</span></h5>
             </div>
             <!-- balance calculation end -->
             <!-- savings calculation start -->
@@ -117,6 +121,7 @@
                 <input
                   type="text"
                   class="form-control"
+                  id="persantage-amouont"
                   placeholder="Enter saving persantage"
                 />
                 <span class="input-group-text">%</span>
