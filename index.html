@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- fontawesome cdn included -->
+    <script
+      src="https://kit.fontawesome.com/f958ef6a1b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Money Savings</title>
     <!-- bootsrap css link included -->
     <link
@@ -105,11 +109,28 @@
               <button type="submit" class="btn btn-bg d-block mx-auto">
                 Calcutate
               </button>
+              <!-- error msg section start -->
+              <p id="error-one" class="mt-3">
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                Please enter positive number
+              </p>
+              <p id="error-two" class="mt-3">
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                Input field cann't be balnk
+              </p>
+              <!-- error msg section end -->
             </form>
+
             <!-- balance calculation start -->
-            <div class="text-center my-3">
+            <div class="text-center mt-3">
               <h5>Total Expenses : <span id="total-expenses"> 00 </span></h5>
               <h5>Balance : <span id="total-balance"> 00</span></h5>
+              <!-- error msg  start -->
+              <p id="error-three" class="mt-3">
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                You did cost more than your main balance
+              </p>
+              <!-- error msg  end -->
             </div>
             <!-- balance calculation end -->
             <!-- savings calculation start -->
@@ -132,6 +153,16 @@
                 >
                   Save
                 </button>
+                <!-- error msg  start -->
+                <p id="error-four" class="mt-3">
+                  <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                  Saving amount persantage must be number
+                </p>
+                <p id="error-five" class="mt-3">
+                  <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                  Enter a positive number
+                </p>
+                <!-- error msg  end -->
               </div>
             </div>
             <!-- savings calculation end -->
@@ -139,6 +170,12 @@
             <div class="text-center">
               <h5>Saving Amount : <span id="saving-amount">00</span></h5>
               <h5>Reamining Balance : <span id="remaing-balance">00</span></h5>
+              <!-- error msg  start -->
+              <p id="error-six" class="mt-3">
+                <span><i class="fa-solid fa-circle-exclamation"></i></span>
+                You do not have enough balance for savings
+              </p>
+              <!-- error msg  end -->
             </div>
             <!-- reamining balance end -->
           </div>

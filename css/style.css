@@ -12,16 +12,30 @@
 .calculation-form {
   background-color: #f8f8f8;
 }
-/* container styles */
-.container img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
 
-@media only screen and (max-width: 576px) {
+/* for error styles */
+
+#error-one,
+#error-two,
+#error-three,
+#error-four,
+#error-five,
+#error-six {
+  color: #f8f8f8;
+  font-size: 20px;
+  padding: 5px 8px;
+  background-color: #222436;
+  border-radius: 5px;
+  display: none;
+}
+.fa-circle-exclamation {
+  color: #e21717;
+}
+/* container styles  for desktop*/
+@media only screen and (min-width: 992px) {
   .container img {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
   }
 }
