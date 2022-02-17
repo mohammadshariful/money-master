@@ -91,6 +91,7 @@ function savingBalance() {
 }
 // saving ammout function
 function savingAmount(balance, persantage) {
+  // select element
   const savingAmount = getElement("saving-amount");
   const ramainingBalance = getElement("remaing-balance");
   const persantageBalance = balance * persantage;
