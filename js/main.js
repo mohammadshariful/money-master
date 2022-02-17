@@ -1,5 +1,3 @@
-// common function
-
 // get any element
 function getElement(elementName) {
   return document.getElementById(elementName);
@@ -14,47 +12,54 @@ function getInputValue(element) {
 }
 
 // error msg function
-function errorMsg(errId, state) {
-  getElement(errId).style.display = state;
+function errorMsg(errEl1, errEl2, stateOne, stateTwo) {
+  const elementOne = getElement(errEl1);
+  const elementTwo = getElement(errEl2);
+  elementOne.style.display = stateOne;
+  elementTwo.style.display = stateTwo;
 }
 
 // form added addEventListener
 const form = document.querySelector("form");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-
+  // slelect element
   const income = getInputValue("input-income");
   const foodCost = getInputValue("input-food");
   const rentCost = getInputValue("input-rent");
   const clothesCost = getInputValue("input-clothes");
   // conditional checking
   if (income < 0 || foodCost < 0 || rentCost < 0 || clothesCost < 0) {
-    errorMsg("error-one", "block");
-    errorMsg("error-two", "none");
+    // error msg
+    errorMsg("error-one", "error-two", "block", "none");
   } else if (
     isNaN(income) ||
     isNaN(foodCost) ||
     isNaN(rentCost) ||
     isNaN(clothesCost)
   ) {
-    errorMsg("error-one", "none");
-    errorMsg("error-two", "block");
+    // error msg
+    errorMsg("error-one", "error-two", "none", "block");
   } else {
-    errorMsg("error-one", "none");
-    errorMsg("error-two", "none");
+    // error msg
+    errorMsg("error-one", "error-two", "none", "none");
     const totalCost = foodCost + rentCost + clothesCost;
     updateBalance(income, totalCost);
   }
 });
 // update balance
 function updateBalance(income, totalCost) {
+  // select element
   const balance = getElement("total-balance");
   const expenses = getElement("total-expenses");
   // conditional checking
   if (totalCost > income) {
-    errorMsg("error-three", "block");
+    // error msg
+    getElement("error-three").style.display = "block";
   } else {
-    errorMsg("error-three", "none");
+    // error msg
+    getElement("error-three").style.display = "none";
+
     expenses.innerText = totalCost;
     balance.innerText = income - totalCost;
   }
@@ -64,6 +69,7 @@ const savingBtn = getElement("saving-btn");
 // addEventListener for saving buttons
 savingBtn.addEventListener("click", savingBalance);
 function savingBalance() {
+  // slelect element
   const savingInput = getInputValue("persantage-number");
   const totalBalance = getElement("total-balance");
   const numberOfBalance = parseInt(totalBalance.innerText);
@@ -71,14 +77,15 @@ function savingBalance() {
   // conditional checking
 
   if (Number.isNaN(savingInput)) {
-    errorMsg("error-four", "block");
-    errorMsg("error-five", "none");
+    // error msg
+    errorMsg("error-four", "error-five", "block", "none");
   } else if (savingInput < 0 || savingInput > 100) {
-    errorMsg("error-four", "none");
-    errorMsg("error-five", "block");
+    // error msg
+    errorMsg("error-four", "error-five", "none", "block");
   } else {
-    errorMsg("error-four", "none");
-    errorMsg("error-five", "none");
+    // error msg
+    errorMsg("error-four", "error-five", "none", "none");
+
     savingAmount(numberOfBalance, persantage);
   }
 }
@@ -89,9 +96,12 @@ function savingAmount(balance, persantage) {
   const persantageBalance = balance * persantage;
   // conditional checking
   if (persantageBalance >= balance) {
-    errorMsg("error-six", "block");
+    // error msg
+    getElement("error-six").style.display = "block";
   } else {
-    errorMsg("error-six", "none");
+    // error msg
+    getElement("error-six").style.display = "none";
+
     savingAmount.innerText = persantageBalance.toFixed(2);
     ramainingBalance.innerText = balance - persantageBalance;
   }
