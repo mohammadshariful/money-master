@@ -7,7 +7,6 @@ function getElement(elementName) {
 function getInputValue(element) {
   const inputField = document.getElementById(element);
   const inputValue = parseInt(inputField.value);
-  inputField.value = "";
   return inputValue;
 }
 
@@ -59,7 +58,6 @@ function updateBalance(income, totalCost) {
   } else {
     // error msg
     getElement("error-three").style.display = "none";
-
     expenses.innerText = totalCost;
     balance.innerText = income - totalCost;
   }
@@ -71,8 +69,7 @@ savingBtn.addEventListener("click", savingBalance);
 function savingBalance() {
   // slelect element
   const savingInput = getInputValue("persantage-number");
-  const totalBalance = getElement("total-balance");
-  const numberOfBalance = parseInt(totalBalance.innerText);
+  const incomeBalance = getInputValue("input-income");
   const persantage = savingInput / 100;
   // conditional checking
 
@@ -85,25 +82,24 @@ function savingBalance() {
   } else {
     // error msg
     errorMsg("error-four", "error-five", "none", "none");
-
-    savingAmount(numberOfBalance, persantage);
+    savingAmount(incomeBalance, persantage);
   }
 }
 // saving ammout function
-function savingAmount(balance, persantage) {
+function savingAmount(incomeBalance, persantage) {
   // select element
   const savingAmount = getElement("saving-amount");
+
   const ramainingBalance = getElement("remaing-balance");
-  const persantageBalance = balance * persantage;
+  const persantageBalance = incomeBalance * persantage;
   // conditional checking
-  if (persantageBalance >= balance) {
+  if (persantageBalance >= incomeBalance) {
     // error msg
     getElement("error-six").style.display = "block";
   } else {
     // error msg
     getElement("error-six").style.display = "none";
-
     savingAmount.innerText = persantageBalance.toFixed(2);
-    ramainingBalance.innerText = balance - persantageBalance;
+    ramainingBalance.innerText = incomeBalance - persantageBalance;
   }
 }
