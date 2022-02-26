@@ -86,18 +86,18 @@ function savingBalance() {
   }
 }
 // saving ammout function
-function savingAmount(incomeBalance, persantage) {
-  // select element
-  const savingAmount = getElement("saving-amount");
 
+function savingAmount(incomeBalance, persantage) {
+  const savingAmount = getElement("saving-amount");
+  const mainBalanceText = getElement("total-balance");
+  const mainBalanceParse = parseInt(mainBalanceText.innerText);
   const ramainingBalance = getElement("remaing-balance");
   const persantageBalance = incomeBalance * persantage;
-  // conditional checking
-  if (persantageBalance >= incomeBalance) {
-    // error msg
+  console.log(mainBalanceParse);
+
+  if (persantageBalance >= mainBalanceParse) {
     getElement("error-six").style.display = "block";
   } else {
-    // error msg
     getElement("error-six").style.display = "none";
     savingAmount.innerText = persantageBalance.toFixed(2);
     ramainingBalance.innerText = incomeBalance - persantageBalance;
